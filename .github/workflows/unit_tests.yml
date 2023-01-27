@@ -1,6 +1,4 @@
 name: Unit Tests
-- name: Checkout
-  uses: actions/checkout@v3
 run-name: Run Unit Tests
 on:
   push:
@@ -11,6 +9,8 @@ jobs:
   unit_testing:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Run Unit Tests
         run: |
           chmod +x ./test/unit-tests.sh
